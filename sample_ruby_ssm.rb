@@ -13,6 +13,7 @@ file_names = ['sample_ssm_config.json']
 
 file_names.each do |file_name|
   text = File.read(file_name)
+  puts text
   new_contents = text.gsub(/REPLACE_ME/, welcomestring)
 
   # To merely print the contents of the file, use:
