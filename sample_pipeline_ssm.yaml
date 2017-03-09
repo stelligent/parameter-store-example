@@ -58,7 +58,7 @@ Resources:
   ConfigFileBuild:
     Type: AWS::CodeBuild::Project
     Properties:
-      Name: !Ref BuildProjectName
+      Name: !Ref AWS::StackName
       Description: Runs a Ruby script that gets parameters from the Parameter Store and replaces the variable tokens with them inside of the sample configuration file
       ServiceRole: !GetAtt CodeBuildRole.Arn
       Artifacts:
