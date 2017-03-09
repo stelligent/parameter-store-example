@@ -4,15 +4,6 @@ Parameters:
   GitHubToken:
     Type: String
     NoEcho: true
-  GitHubUser:
-    Type: String
-    Default: stelligent
-  GitHubRepoName:
-    Type: String
-    Default: Parameter-Store-Example
-  GitHubBranchName:
-    Type: String
-    Default: master
 Resources: 
   CodePipelineRole:
     Type: AWS::IAM::Role
@@ -106,9 +97,9 @@ Resources:
             OutputArtifacts:
               - Name: OutputArtifact
             Configuration:
-              Owner: !Ref GitHubUser
-              Repo: !Ref GitHubRepoName
-              Branch: !Ref GitHubBranchName
+              Owner: stelligent
+              Repo: parameter-store-example
+              Branch: master
               OAuthToken: !Ref GitHubToken
         - Name: Build
           Actions:
