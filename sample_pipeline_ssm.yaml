@@ -4,9 +4,6 @@ Parameters:
   GitHubToken:
     Type: String
     NoEcho: true
-  BuildProjectName:
-    Description: Name you would like to call the CodeBuild project
-    Type: String
 Resources: 
   CodePipelineRole:
     Type: AWS::IAM::Role
