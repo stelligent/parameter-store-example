@@ -4,6 +4,9 @@ Parameters:
   GitHubToken:
     Type: String
     NoEcho: true
+  BuildProjectName:
+    Description: Name you would like to call the CodeBuild project
+    Type: String
 Resources: 
   CodePipelineRole:
     Type: AWS::IAM::Role
@@ -55,7 +58,7 @@ Resources:
   ConfigFileBuild:
     Type: AWS::CodeBuild::Project
     Properties:
-      Name: ConfigFileBuild
+      Name: !Ref BuildProjectName
       Description: Runs a Ruby script that gets parameters from the Parameter Store and replaces the variable tokens with them inside of the sample configuration file
       ServiceRole: !GetAtt CodeBuildRole.Arn
       Artifacts:
